@@ -2,13 +2,13 @@ import React, { Component } from 'react'; // eslint-disable-line import/no-extra
 import {
     Text, TouchableOpacity, View, Modal,
 } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
+// import { Picker } from '@react-native-picker/picker';
 
 import Country from './country';
 import styles from './styles';
 import { ReactNativeCountryPickerProps, ReactNativeCountryPickerState } from './typings';
 
-const PickerItem = Picker.Item;
+// const PickerItem = Picker.Item;
 
 export default class CountryPicker extends Component<ReactNativeCountryPickerProps, ReactNativeCountryPickerState> {
     private picker: any;
@@ -73,53 +73,5 @@ export default class CountryPicker extends Component<ReactNativeCountryPickerPro
     render() {
         const { buttonColor } = this.state;
         const itemStyle = this.props.itemStyle || {};
-        return (
-            <Modal
-                animationType="slide"
-                transparent
-                visible={this.state.modalVisible}
-                onRequestClose={() => {
-                    console.log('Country picker has been closed.');
-                }}
-            >
-                <View style={styles.basicContainer}>
-                    <View
-                        style={[
-                            styles.modalContainer,
-                            { backgroundColor: this.props.pickerBackgroundColor || 'white' },
-                        ]}
-                    >
-                        <View style={styles.buttonView}>
-                            <TouchableOpacity onPress={this.onPressCancel}>
-                                <Text style={[{ color: buttonColor }, this.props.cancelTextStyle]}>
-                                    {this.props.cancelText || 'Cancel'}
-                                </Text>
-                            </TouchableOpacity>
-
-                            <TouchableOpacity onPress={this.onPressSubmit}>
-                                <Text style={[{ color: buttonColor }, this.props.confirmTextStyle]}>
-                                    {this.props.confirmText || 'Confirm'}
-                                </Text>
-                            </TouchableOpacity>
-                        </View>
-
-                        <View style={styles.mainBox}>
-                            <Picker
-                                ref={(ref) => {
-                                    this.picker = ref;
-                                }}
-                                style={styles.bottomPicker}
-                                selectedValue={this.state.selectedCountry}
-                                onValueChange={(country) => this.onValueChange(country)}
-                                itemStyle={itemStyle}
-                                mode="dialog"
-                            >
-                                {Country.getAll().map((country, index) => this.renderItem(country, index))}
-                            </Picker>
-                        </View>
-                    </View>
-                </View>
-            </Modal>
-        );
-    }
+        return <View/>;
 }
