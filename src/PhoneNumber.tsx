@@ -69,7 +69,7 @@ class PhoneNumber {
         try {
             return phoneUtil.parse(number, iso2);
         } catch (err) {
-            console.log(`Exception was thrown: ${err.toString()}`);
+            // console.log(`Exception was thrown: ${err.toString()}`);
             return null;
         }
     }
