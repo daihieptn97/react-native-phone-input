@@ -65,13 +65,9 @@ export default class CountryPicker extends Component<ReactNativeCountryPickerPro
         });
     }
 
-    // eslint-disable-next-line class-methods-use-this
-    renderItem(country, index) {
-        return <PickerItem key={country.iso2} value={country.iso2} label={country.name} />;
-    }
-
     render() {
-        const { buttonColor } = this.state;
+        const {buttonColor} = this.state;
         const itemStyle = this.props.itemStyle || {};
-        return <View/>;
+        return <View/>
+    }
 }
